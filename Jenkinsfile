@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+		setupVCDA();
                 sh 'mvn test'
             }
             post {
@@ -29,7 +30,7 @@ pipeline {
     }
 }
 
-void setUpVCDA() {
+void setupVCDA() {
 	echo "downloading vcda ....\n"
 }
 
